@@ -29,6 +29,12 @@ managementnode
 controlnodes
 datanodes
 
+# MCS
+[mapr-hbase:children]
+managementnode
+controlnodes
+datanodes
+
 # HBase client
 [mapr-hbase:children]
 managementnode

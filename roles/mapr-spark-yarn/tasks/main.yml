@@ -1,16 +1,16 @@
 ---
 # Install Spark on YARN
 # Redhat / CentOS
-- name: Install mapr-spark (Redhat / CentOS)
-  yum: name=mapr-spark-{{spark_version}} state=present
+- name: Install mapr-spark-{{spark_version}} (Redhat / CentOS)
+  yum: name=mapr-spark-{{spark_version}}* state=present
   when: ansible_os_family == 'RedHat'
 # Debian / Ubuntu
-- name: Install mapr-spark (Debian / Ubuntu)
-  apt: name=mapr-spark-{{spark_version}} state=present allow_unauthenticated=yes
+- name: Install mapr-spark-{{spark_version}} (Debian / Ubuntu)
+  apt: name=mapr-spark-{{spark_version}}* state=present allow_unauthenticated=yes
   when: ansible_os_family == 'Debian'
 # Suse
-- name: Install mapr-spark (Suse)
-  zypper: name=mapr-spark-{{spark_version}} state=present
+- name: Install mapr-spark-{{spark_version}} (Suse)
+  zypper: name=mapr-spark-{{spark_version}}* state=present
   when: ansible_os_family == 'Suse'
 
 # Other actions

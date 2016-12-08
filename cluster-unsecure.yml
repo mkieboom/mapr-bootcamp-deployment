@@ -170,6 +170,7 @@
   hosts: bootcamp-clustername
   roles:
     - bootcamp-clustername
+    - bootcamp-http-port
 
 
 # Configure and Start Zookeeper & Warden

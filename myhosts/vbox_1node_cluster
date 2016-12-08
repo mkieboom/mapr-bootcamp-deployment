@@ -65,6 +65,11 @@ managementnode
 controlnodes
 datanodes
 
+# Set cluster name to training.mapr.com
+[bootcamp-http-port:children]
+managementnode
+controlnodes
+datanodes
 
 
 

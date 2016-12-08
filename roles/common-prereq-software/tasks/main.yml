@@ -1,6 +1,19 @@
 ---
 # Install MapR Pre-requisites software packages
 
+  - name: Disable iptables
+    service: name=iptables state=stopped enabled=no
+    register: command_result
+    failed_when: "command_result|failed and 'could not find' not in command_result.msg"
+    when: ansible_lsb.major_release|int == 6
+    ignore_errors: yes
+
+  - name: Disable firewalld
+    service: name=firewalld state=stopped enabled=no
+    register: command_result
+    failed_when: "command_result|failed and 'could not find' not in command_result.msg"
+    when: ansible_lsb.major_release|int == 7
+    ignore_errors: yes
 
 
 #   - name: Install libselinux-python tools
@@ -20,17 +33,6 @@
 #   - name: Reread ansible_lsb facts
 #     setup: filter=ansible_lsb*
 
-#   - name: Disable iptables
-#     service: name=iptables state=stopped enabled=no
-#     register: command_result
-#     failed_when: "command_result|failed and 'could not find' not in command_result.msg"
-#     when: ansible_lsb.major_release|int == 6
-
-#   - name: Disable firewalld
-#     service: name=firewalld state=stopped enabled=no
-#     register: command_result
-#     failed_when: "command_result|failed and 'could not find' not in command_result.msg"
-#     when: ansible_lsb.major_release|int == 7
 
 #   - name: Install EPEL on CentOS v6.x
 #     yum: name=http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm state=installed

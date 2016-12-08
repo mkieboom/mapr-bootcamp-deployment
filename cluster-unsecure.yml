@@ -163,6 +163,15 @@
 #   roles:
 #     - ext-zeppelin
 
+
+
+# Bootcamp specifics
+- name: Set cluster name to training.mapr.com
+  hosts: bootcamp-clustername
+  roles:
+    - bootcamp-clustername
+
+
 # Configure and Start Zookeeper & Warden
 - name: Configure and start
   hosts: all

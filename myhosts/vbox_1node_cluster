@@ -58,53 +58,13 @@ managementnode
 
 
 
+# Bootcamp specific configurations
+# Set cluster name to training.mapr.com
+[bootcamp-clustername:children]
+managementnode
+controlnodes
+datanodes
 
 
 
-# Flume
-[mapr-flume:children]
 
-# Hcontrolnodes CLI
-[mapr-hcontrolnodes-cli:children]
-
-# Hcontrolnodes REST and Thrift
-[mapr-hcontrolnodes-thrift-rest:children]
-
-# Hive CLI
-[mapr-hive-cli:children]
-
-# Hive Meta Store
-[mapr-hive-metastore:children]
-
-# Hive Server2
-[mapr-hive-server2:children]
-
-# Hive HCatalog
-[mapr-hive-hcatalog:children]
-
-# Hive WebHCat
-[mapr-hive-webhcat:children]
-
-# HttpFS
-[mapr-httpfs:children]
-
-# Hue, not yet supported
-[mapr-hue:children]
-
-# Mahout
-[mapr-mahout:children]
-
-# Sqoop2 Server
-[mapr-sqoop2-server:children]
-
-# Sqoop2 Client
-[mapr-sqoop2-client:children]
-
-# Pig
-[mapr-pig:children]
-
-# Oozie
-[mapr-oozie:children]
-
-# HttpFS
-[mapr-httpfs:children]

@@ -1,34 +1,34 @@
 - name: Apply MapR pre-requisite configuration to all nodes
   hosts: all
   roles:
-    - common-open-jdk
+#    - common-open-jdk
     - common-prereq-software
 - name: Create MapR Repository and MapR Group and User
   hosts: all
   roles:
     - configure-mapr-repository
-    - configure-mapr-user
-    - configure-mapr-gpgkey
-- name: Install MapR Core
-  hosts: mapr-core
-  roles:
-    - mapr-core
-- name: Install Zookeeper
-  hosts: mapr-zookeeper
-  roles:
-    - mapr-zookeeper
-- name: Install CLDB
-  hosts: mapr-cldb
-  roles:
-    - mapr-cldb
-- name: Install Filesystem
-  hosts: mapr-fileserver
-  roles:
-    - mapr-fileserver
-- name: Install MCS
-  hosts: managementnode
-  roles:
-    - mapr-mcs
+#    - configure-mapr-user
+#    - configure-mapr-gpgkey
+# - name: Install MapR Core
+#   hosts: mapr-core
+#   roles:
+#     - mapr-core
+# - name: Install Zookeeper
+#   hosts: mapr-zookeeper
+#   roles:
+#     - mapr-zookeeper
+# - name: Install CLDB
+#   hosts: mapr-cldb
+#   roles:
+#     - mapr-cldb
+# - name: Install Filesystem
+#   hosts: mapr-fileserver
+#   roles:
+#     - mapr-fileserver
+# - name: Install MCS
+#   hosts: managementnode
+#   roles:
+#     - mapr-mcs
 - name: Install NFS
   hosts: mapr-nfs
   roles:

@@ -8,16 +8,14 @@
     - bootcamp-http-port
     - bootcamp-permissions
 
-
-
 # - name: Apply MapR pre-requisite configuration to all nodes
 #   hosts: all
 #   roles:
 #     - common-prereq-software
- - name: Create MapR Repository and MapR Group and User
-   hosts: all
-   roles:
-     - configure-mapr-repository
+- name: Create MapR Repository and MapR Group and User
+  hosts: all
+  roles:
+    - configure-mapr-repository
 
 
 

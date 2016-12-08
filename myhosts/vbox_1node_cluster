@@ -9,29 +9,6 @@
 192.168.168.1 ansible_user=root ansible_become=yes ansible_become_method=sudo
 
 
-# Core
-[mapr-core:children]
-managementnode
-controlnodes
-datanodes
-
-# Zookeeper
-[mapr-zookeeper:children]
-controlnodes
-
-# Container Location Database
-[mapr-cldb:children]
-controlnodes
-
-# MapR Control System
-[mapr-mcs:children]
-controlnodes
-
-# MapR Fileserver
-[mapr-fileserver:children]
-managementnode
-controlnodes
-datanodes
 
 # NFS
 [mapr-nfs:children]
@@ -41,8 +18,9 @@ datanodes
 
 # Apache Drill
 [mapr-drill:children]
-#controlnodes
-#datanodes
+managementnode
+controlnodes
+datanodes
 
 
 ###############################################################
@@ -69,9 +47,19 @@ datanodes
 
 # Spark on YARN
 [mapr-spark-yarn:children]
+managementnode
+controlnodes
+datanodes
 
 # Spark HistoryServer
 [mapr-spark-historyserver:children]
+managementnode
+
+
+
+
+
+
 
 # Flume
 [mapr-flume:children]

@@ -1,0 +1,4 @@
+---
+   # Set MapR http port to 8080
+   - name: Set MapR http port to 8080
+     lineinfile: dest=/opt/mapr/conf/web.conf regexp="^mapr.webui.http.port" line="mapr.webui.http.port=8080"

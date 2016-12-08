@@ -1,4 +1,9 @@
 ---
 # Change MapR Cluster Name to training.mapr.com
-   - name: Ensure TCP retries are set to 5
-     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^([\w.]+)" line="training.mapr.com"
+#   - name: Ensure TCP retries are set to 5
+#     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^([\w.]+ )" line="training.mapr.com"
+   - replace:
+    dest: /opt/mapr/conf/mapr-clusters.conf
+    regexp: '^([\w.]+ )'
+    replace: 'training.mapr.com'
+    backup: yes

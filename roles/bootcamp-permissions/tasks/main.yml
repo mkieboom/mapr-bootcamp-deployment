@@ -1,0 +1,4 @@
+---
+   # Open up folder permissions on /user
+   - name: Open up folder permissions on /user
+     shell: hadoop fs -chmod 777 /user/

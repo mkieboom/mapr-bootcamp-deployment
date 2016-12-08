@@ -8,6 +8,7 @@
   roles:
     - bootcamp-clustername
     - bootcamp-http-port
+    - bootcamp-permissions
 
 
 

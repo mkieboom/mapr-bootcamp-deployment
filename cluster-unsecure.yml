@@ -166,8 +166,8 @@
 
 
 # Bootcamp specifics
-- name: Set cluster name to training.mapr.com
-  hosts: bootcamp-clustername
+- name: Set bootcamp specific details
+  hosts: bootcamp
   roles:
     - bootcamp-clustername
     - bootcamp-http-port

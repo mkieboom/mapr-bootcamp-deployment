@@ -9,6 +9,13 @@
 192.168.168.1 ansible_user=root ansible_become=yes ansible_become_method=sudo
 
 
+# Bootcamp specific configurations (clustername, http port)
+[bootcamp:children]
+managementnode
+controlnodes
+datanodes
+
+
 
 # NFS
 [mapr-nfs:children]
@@ -58,18 +65,7 @@ managementnode
 
 
 
-# Bootcamp specific configurations
-# Set cluster name to training.mapr.com
-[bootcamp-clustername:children]
-managementnode
-controlnodes
-datanodes
 
-# Set cluster name to training.mapr.com
-[bootcamp-http-port:children]
-managementnode
-controlnodes
-datanodes
 
 
 

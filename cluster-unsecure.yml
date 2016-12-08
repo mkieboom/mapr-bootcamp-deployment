@@ -63,6 +63,7 @@
   hosts: mapr-webserver
   roles:
     - mapr-webserver
+
 # - name: Install YARN Resource Manager
 #   hosts: mapr-resourcemanager
 #   roles:

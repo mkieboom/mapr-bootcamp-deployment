@@ -29,8 +29,8 @@ managementnode
 controlnodes
 datanodes
 
-# MCS
-[mapr-hbase:children]
+# MapR MCS
+[mapr-webserver:children]
 managementnode
 controlnodes
 datanodes

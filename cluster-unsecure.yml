@@ -1,4 +1,17 @@
 - name: Apply MapR pre-requisite configuration to all nodes
+
+
+
+# Bootcamp specifics
+- name: Set bootcamp specific details
+  hosts: bootcamp
+  roles:
+    - bootcamp-clustername
+    - bootcamp-http-port
+
+
+
+
   hosts: all
   roles:
 #    - common-open-jdk
@@ -164,13 +177,6 @@
 #     - ext-zeppelin
 
 
-
-# Bootcamp specifics
-- name: Set bootcamp specific details
-  hosts: bootcamp
-  roles:
-    - bootcamp-clustername
-    - bootcamp-http-port
 
 
 # Configure and Start Zookeeper & Warden

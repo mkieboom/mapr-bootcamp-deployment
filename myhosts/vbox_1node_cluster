@@ -29,6 +29,12 @@ managementnode
 controlnodes
 datanodes
 
+# HBase client
+[mapr-hbase:children]
+managementnode
+controlnodes
+datanodes
+
 
 ###############################################################
 

@@ -54,6 +54,10 @@
 #   hosts: mapr-drill
 #   roles:
 #     - mapr-drill
+- name: Install HBase client
+  hosts: mapr-hbase
+  roles:
+    - mapr-hbase
 # - name: Install YARN Resource Manager
 #   hosts: mapr-resourcemanager
 #   roles:

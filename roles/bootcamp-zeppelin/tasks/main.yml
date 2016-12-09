@@ -3,4 +3,5 @@
      unarchive:
        src: "{{zeppelin_download_url}}"
        dest: "{{zeppelin_location}}"
+       remote_src: yes
 

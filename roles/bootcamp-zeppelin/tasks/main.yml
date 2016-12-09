@@ -4,21 +4,21 @@
        path: /tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz
      register: sym
 
-    - debug:
-        msg: "islnk isn't defined (path doesn't exist)"
-      when: sym.stat.islnk is not defined
+   - debug:
+       msg: "islnk isn't defined (path doesn't exist)"
+     when: sym.stat.islnk is not defined
 
-    - debug:
-        msg: "islnk is defined (path must exist)"
-      when: sym.stat.islnk is defined
+   - debug:
+       msg: "islnk is defined (path must exist)"
+     when: sym.stat.islnk is defined
 
-    - debug:
-        msg: "Path exists and is a symlink"
-      when: sym.stat.islnk is defined and sym.stat.islnk
+   - debug:
+       msg: "Path exists and is a symlink"
+     when: sym.stat.islnk is defined and sym.stat.islnk
 
-    - debug:
-        msg: "Path exists and isn't a symlink"
-      when: sym.stat.islnk is defined and sym.stat.islnk == False
+   - debug:
+       msg: "Path exists and isn't a symlink"
+     when: sym.stat.islnk is defined and sym.stat.islnk == False
 
    # - local_action: stat path="/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"
    #   register: zeppelin_file_exists

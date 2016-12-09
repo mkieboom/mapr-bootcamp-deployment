@@ -3,7 +3,7 @@
      get_url:
        url: "{{zeppelin_download_url}}"
        dest: "/tmp/"
-       timeout: 300
+#       timeout: 600
 
 #   - name: Move zeppelin to required location
 #     command: "mv /opt/zeppelin-{{zeppelin_version}}-bin-all {{zeppelin_location}}"

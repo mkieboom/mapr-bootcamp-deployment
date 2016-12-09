@@ -1,6 +1,6 @@
 ---
     # Download and install Maven
-   - name Create Maven repo for yum
+   - name: Create Maven repo for yum
      get_url:
        url: http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
        dest: /etc/yum.repos.d/epel-apache-maven.repo

@@ -1,16 +1,17 @@
 ---
-    # Change MapR Cluster Name to training.mapr.com
+    # Change MapR Cluster Name to {{ bootcamp_cluster_name }}
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
      register: clustersname
 
-   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $2}'"
-     register: clustersecure
+#   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $2}'"
+#     register: clustersecure
 
-   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $3}'"
-     register: clustercldbnodes
+#   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $3}'"
+#     register: clustercldbnodes
 
-#   - name: Ensure TCP retries are set to 5
-     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustersname }}" line="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"
+   - name: Change MapR Cluster Name to {{ bootcamp_cluster_name }}
+     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustersname }}" line="{{ bootcamp_cluster_name }}"
+#     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustersname }}" line="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"
 
 #   - replace: 
 #    dest: /opt/mapr/conf/mapr-clusters.conf

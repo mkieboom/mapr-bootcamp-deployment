@@ -27,7 +27,7 @@ twitter_sentiment_location: /mapr/training.mapr.com/data/twitter-sentiment-analy
 
 # Zeppelin
 zeppelin_version: 0.6.2
-zeppelin_location: /opt/zeppelin
+zeppelin_location: /opt/
 zeppelin_download_url: http://ftp.tudelft.nl/apache/zeppelin/zeppelin-{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
 
 # Elasticsearch

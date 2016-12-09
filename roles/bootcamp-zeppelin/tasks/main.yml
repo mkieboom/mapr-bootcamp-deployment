@@ -1,9 +1,9 @@
 ---
-   - name: Download and extract Zeppelin
-     get_url:
-       url: "{{zeppelin_download_url}}"
-       dest: "{{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz"
-       timeout: 900
+   # - name: Download and extract Zeppelin
+   #   get_url:
+   #     url: "{{zeppelin_download_url}}"
+   #     dest: "{{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz"
+   #     timeout: 900
 
    - name: Extract Zeppelin
      unarchive: src={{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_install_location}} copy=no

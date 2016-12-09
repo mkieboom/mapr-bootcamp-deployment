@@ -1,7 +1,7 @@
 ---
     # Change MapR Cluster Name to {{ bootcamp_cluster_name }}
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
-     register: clustersname
+     register: clustername
 
 #   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $2}'"
 #     register: clustersecure
@@ -10,12 +10,12 @@
 #     register: clustercldbnodes
 
 #   - name: Change MapR Cluster Name to {{ bootcamp_cluster_name }}
-#     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustersname }}" line="{{ bootcamp_cluster_name }}"
-#     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustersname }}" line="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"
+#     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustername }}" line="{{ bootcamp_cluster_name }}"
+#     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustername }}" line="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"
 
    - replace: 
     dest: /opt/mapr/conf/mapr-clusters.conf
-    regexp: '^({{ clustersname }})'
+    regexp: '^(\{\{ clustername \}\})'
     replace: 'training.mapr.com'
 
 #dest=/etc/sudoers regexp="^root(\s+)ALL=(ALL)(\s+)ALL" insertafter="^root" line='{{ item }}' state=present

@@ -4,7 +4,7 @@
      register: sym
 
    - debug:
-       msg: "islnk isn't defined (path doesn't exist)"
+       msg: "/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz islnk isn't defined (path doesn't exist)"
      when: sym.stat.islnk is not defined
 
    - debug:

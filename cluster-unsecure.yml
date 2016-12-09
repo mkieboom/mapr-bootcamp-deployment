@@ -13,6 +13,9 @@
   hosts: bootcamp-singlenode
   roles:
 #    - bootcamp-twitter-sentiment-analysis
+    - bootcamp-elasticsearch
+    - bootcamp-kibana
+
 
 - name: Apply MapR pre-requisite configuration to all nodes
   hosts: all

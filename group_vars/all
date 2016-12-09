@@ -27,5 +27,14 @@ twitter_sentiment_location: /mapr/training.mapr.com/data/twitter-sentiment-analy
 
 # Zeppelin
 zeppelin_version: 0.6.2
-zeppelin_download_url: http://ftp.tudelft.nl/apache/zeppelin/zeppelin-{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
 zeppelin_location: /opt/zeppelin
+zeppelin_download_url: http://ftp.tudelft.nl/apache/zeppelin/zeppelin-{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
+
+# Elasticsearch
+elasticsearch_version 5.1.1
+elasticsearch_download_url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{elasticsearch_version}}.rpm
+
+# Kibana
+kibana_version 5.1.1
+kibana_download_url: https://artifacts.elastic.co/downloads/kibana/kibana-{{kibana_version}}-x86_64.rpm
+

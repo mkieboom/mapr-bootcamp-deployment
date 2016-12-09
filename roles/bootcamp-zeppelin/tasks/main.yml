@@ -1,5 +1,4 @@
 ---
-   - name: Download and extract Zeppelin
    - stat:
        path: /tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz
      register: sym
@@ -24,6 +23,7 @@
    #   register: zeppelin_file_exists
    #   become: no
 
+  #  - name: Download and extract Zeppelin
   #    get_url:
   #      url: "{{zeppelin_download_url}}"
   #      dest: "/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"

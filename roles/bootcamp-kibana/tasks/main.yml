@@ -2,13 +2,13 @@
    - name: Download Kibana
      get_url:
        url: "{{kibana_download_url}}"
-       dest: "{{kibana_download_location}}/elasticsearch-{{kibana_version}}.rpm"
+       dest: "{{kibana_download_location}}/kibana-{{kibana_version}}.rpm"
        timeout: 900
 
    - name: Install Kibana
-     yum: name={{kibana_download_location}}/elasticsearch-{{kibana_version}}.rpm state=present
+     yum: name={{kibana_download_location}}/kibana-{{kibana_version}}.rpm state=present
 
-   - name: Allow Elasticsearch to bind to all IP addresses
+   - name: Allow Kibana to bind to all IP addresses
      shell: 'echo "server.host: 0.0.0.0" >> /etc/kibana/kibana.yml'
 
    - name: Start the Kibana service

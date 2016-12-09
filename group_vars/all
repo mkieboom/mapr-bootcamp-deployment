@@ -43,5 +43,6 @@ elasticsearch_download_url: https://artifacts.elastic.co/downloads/elasticsearch
 
 # Kibana
 kibana_version: 5.1.1
+kibana_download_location: /tmp/
 kibana_download_url: https://artifacts.elastic.co/downloads/kibana/kibana-{{kibana_version}}-x86_64.rpm
 

@@ -24,6 +24,6 @@
        status_code: 201
        body_format: json
      with_items:
-     - {{zeppelin_notebook_1}}
-     - {{zeppelin_notebook_2}}
+     - "{{zeppelin_notebook_1}}"
+     - "{{zeppelin_notebook_2}}"
 

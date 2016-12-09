@@ -5,6 +5,6 @@
        dest: "/opt/"
        remote_src: yes
 
-   - name: Download and extract Zeppelin
-     command: "mv /opt/zeppelin* {{zeppelin_location}}"
+   - name: Move zeppelin to required location
+     command: "mv /opt/zeppelin-{{zeppelin_version}}-bin-all {{zeppelin_location}}"
      

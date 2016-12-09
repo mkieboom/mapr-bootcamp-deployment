@@ -9,7 +9,7 @@
      yum: name={{elasticsearch_download_location}}/elasticsearch-{{elasticsearch_version}}.rpm state=present
 
    - name: Allow Elasticsearch to bind to all IP addresses
-     lineinfile: dest=/etc/elasticsearch/elasticsearch.yml regexp="^network.bind_host" line="network.bind_host: 0\.0"
+     shell: echo 'network.bind_host: 0.0.0.0' >> /etc/elasticsearch/elasticsearch.yml 
 
 #   - Start the Elasticsearch service
 #     service:

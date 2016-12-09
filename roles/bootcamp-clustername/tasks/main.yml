@@ -1,10 +1,14 @@
 ---
     # Change MapR Cluster Name to training.mapr.com
+   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
+     register: clustersname
+
    - name: Ensure TCP retries are set to 5
-     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^([\w.]+ )" line="training.mapr.com" insertbefore=" secure"
+     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustersname }}" line="training.mapr.com"
+
 #   - replace: 
 #    dest: /opt/mapr/conf/mapr-clusters.conf
 #    regexp: '^([\w.]+ )'
 #    replace: 'training.mapr.com'
 
-         #dest=/etc/sudoers regexp="^root(\s+)ALL=(ALL)(\s+)ALL" insertafter="^root" line='{{ item }}' state=present
+#dest=/etc/sudoers regexp="^root(\s+)ALL=(ALL)(\s+)ALL" insertafter="^root" line='{{ item }}' state=present

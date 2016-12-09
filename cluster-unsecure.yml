@@ -6,64 +6,29 @@
   roles:
     - bootcamp-clustername
     - bootcamp-http-port
-    - bootcamp-permissions
+#    - bootcamp-permissions
 
 # - name: Apply MapR pre-requisite configuration to all nodes
 #   hosts: all
 #   roles:
-#     - common-prereq-software
-- name: Create MapR Repository and MapR Group and User
-  hosts: all
-  roles:
-    - configure-mapr-repository
-
-
-
-
-## Install MapR Monitoring
-
-# - name: Install Elasticsearch
-#   hosts: mapr-elasticsearch
+# - name: Create MapR Repository and MapR Group and User
+#   hosts: all
 #   roles:
-#     - mapr-elasticsearch
-# - name: Install Kibana
-#   hosts: mapr-kibana
-#   roles:
-#     - mapr-kibana
-# - name: Install Fluentd
-#   hosts: mapr-fluentd
-#   roles:
-#     - mapr-fluentd
-
-# - name: Install OpenTSDB
-#   hosts: mapr-opentsdb
-#   roles:
-#     - mapr-opentsdb
-# - name: Install Grafana
-#   hosts: mapr-grafana
-#   roles:
-#     - mapr-grafana
-# - name: Install Collectd
-#   hosts: mapr-collectd
-#   roles:
-#     - mapr-collectd
-
+#     - configure-mapr-repository
 
 ## Install MapR Eco-system components
 # - name: Install Drill
 #   hosts: mapr-drill
 #   roles:
 #     - mapr-drill
-- name: Install HBase client
-  hosts: mapr-hbase
-  roles:
-    - mapr-hbase
-
-- name: Install MapR MCS
-  hosts: mapr-webserver
-  roles:
-    - mapr-webserver
-
+# - name: Install HBase client
+#   hosts: mapr-hbase
+#   roles:
+#     - mapr-hbase
+# - name: Install MapR MCS
+#   hosts: mapr-webserver
+#   roles:
+#     - mapr-webserver
 # - name: Install YARN Resource Manager
 #   hosts: mapr-resourcemanager
 #   roles:
@@ -82,17 +47,3 @@
 #     - mapr-spark-historyserver
 
 
-
-# # Configure and Start Zookeeper & Warden
-# - name: Configure and start
-#   hosts: all
-#   roles:
-#     - mapr-configure-unsecure
-# - name: Restarting mapr-zookeeper
-#   hosts: mapr-zookeeper
-#   roles:
-#     - mapr-configure-zookeeper-restart
-# - name: Restarting mapr-warden
-#   hosts: all
-#   roles:
-#     - mapr-configure-warden-restart

@@ -14,8 +14,8 @@
 #     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustername }}" line="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"
 
    - replace: 
-    dest: /opt/mapr/conf/mapr-clusters.conf
-    regexp: "^(\{\{ clustername \}\})"
-    replace: "{{ bootcamp_cluster_name }}"
+     dest: /opt/mapr/conf/mapr-clusters.conf
+     regexp: "^(\{\{ clustername \}\})"
+     replace: "{{ bootcamp_cluster_name }}"
 
 #dest=/etc/sudoers regexp="^root(\s+)ALL=(ALL)(\s+)ALL" insertafter="^root" line='{{ item }}' state=present

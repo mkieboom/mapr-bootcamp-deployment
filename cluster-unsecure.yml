@@ -4,17 +4,19 @@
 - name: Set bootcamp specific details
   hosts: bootcamp
   roles:
-    - bootcamp-clustername
+#    - bootcamp-clustername
     - bootcamp-http-port
-#    - bootcamp-permissions
+    - bootcamp-permissions
+    - bootcamp-maven
 
-# - name: Apply MapR pre-requisite configuration to all nodes
-#   hosts: all
-#   roles:
-# - name: Create MapR Repository and MapR Group and User
-#   hosts: all
-#   roles:
-#     - configure-mapr-repository
+- name: Apply MapR pre-requisite configuration to all nodes
+  hosts: all
+  roles:
+
+- name: Create MapR Repository
+  hosts: all
+  roles:
+    - configure-mapr-repository
 
 ## Install MapR Eco-system components
 # - name: Install Drill
@@ -25,6 +27,10 @@
 #   hosts: mapr-hbase
 #   roles:
 #     - mapr-hbase
+# - name: Install MapR NFS
+#   hosts: mapr-nfs
+#   roles:
+#     - mapr-nfs
 # - name: Install MapR MCS
 #   hosts: mapr-webserver
 #   roles:

@@ -11,10 +11,10 @@
    - name: Allow Elasticsearch to bind to all IP addresses
      shell: 'echo "server.host: 0.0.0.0" >> /etc/kibana/kibana.yml'
 
-   - Start the Kibana service
+   - name: Start the Kibana service
      service:
-     name: kibana
-     state: restarted
+       name: kibana
+       state: restarted
 
    - name: Wait for Kibana to come up
      wait_for:

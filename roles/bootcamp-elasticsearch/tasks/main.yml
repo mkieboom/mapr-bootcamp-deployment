@@ -13,8 +13,8 @@
 
    - name: Start the Elasticsearch service
      service:
-     name: elasticsearch
-     state: restarted
+       name: elasticsearch
+       state: restarted
 
 #   - name: Wait for Elasticsearch to come up
 #     wait_for:

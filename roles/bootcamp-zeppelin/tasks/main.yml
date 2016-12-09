@@ -6,6 +6,6 @@
    #     timeout: 900
 
    - name: Extract Zeppelin
-     unarchive: src={{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_install_location}} copy=no
+     unarchive: src={{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz dest=/opt/ copy=no
 
 

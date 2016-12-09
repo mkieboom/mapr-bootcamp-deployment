@@ -9,6 +9,6 @@
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $3}'"
      register: clustercldbnodes
 
-   - shell: 'echo "{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}" > /opt/mapr/conf/mapr-clusters-test.conf'
+   - shell: echo "{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}" > /opt/mapr/conf/mapr-clusters-test.conf
 
    - file: dest=/opt/mapr/conf/mapr-clusters.conf content="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"

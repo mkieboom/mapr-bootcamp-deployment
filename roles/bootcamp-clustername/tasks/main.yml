@@ -3,14 +3,17 @@
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
      register: clustername
 
+   - shell: "sed -i -e 's/{{ clustername }}/{{ bootcamp_cluster_name }}/g' /opt/mapr/conf/mapr-clusters.conf"
+
+
 #   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $2}'"
 #     register: clustersecure
 
 #   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $3}'"
 #     register: clustercldbnodes
 
-   - name: Change MapR Cluster Name to {{ bootcamp_cluster_name }}
-     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustername }}" line="{{ bootcamp_cluster_name }}"
+#   - name: Change MapR Cluster Name to {{ bootcamp_cluster_name }}
+#     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustername }}" line="{{ bootcamp_cluster_name }}"
 
 #     lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp="^{{ clustername }}" line="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"
 

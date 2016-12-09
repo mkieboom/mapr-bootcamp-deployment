@@ -11,12 +11,12 @@
 #   - name: Allow Elasticsearch to bind to all IP addresses
 #     lineinfile: dest=/etc/elasticsearch/elasticsearch.yml regexp="^network.bind_host" line="network.bind_host 0.0.0.0"
 
-   - Start the Elasticsearch service
-     service:
-     name: elasticsearch
-     state: restarted
+#   - Start the Elasticsearch service
+#     service:
+#     name: elasticsearch
+#     state: restarted
 
-   - name: Wait for Elasticsearch to come up
-     wait_for:
-       port: "{{elasticsearch_port}}"
-       delay: 5
+#   - name: Wait for Elasticsearch to come up
+#     wait_for:
+#       port: "{{elasticsearch_port}}"
+#       delay: 5

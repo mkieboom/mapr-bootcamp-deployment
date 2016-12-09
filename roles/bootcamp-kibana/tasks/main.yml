@@ -8,8 +8,8 @@
    - name: Install Kibana
      yum: name={{kibana_download_location}}/elasticsearch-{{kibana_version}}.rpm state=present
 
-   - name: Allow Kibana to bind to all IP addresses
-     lineinfile: dest=/etc/kibana/kibana.yml regexp="^server.host" line="server.host: 0.0.0.0"
+   - name: Allow Elasticsearch to bind to all IP addresses
+     shell: 'echo "server.host: 0.0.0.0" >> /etc/kibana/kibana.yml'
 
    - Start the Kibana service
      service:

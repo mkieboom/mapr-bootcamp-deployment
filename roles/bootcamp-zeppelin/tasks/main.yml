@@ -1,16 +1,47 @@
 ---
    - name: Download and extract Zeppelin
-     get_url:
-       url: "{{zeppelin_download_url}}"
-       dest: "/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"
-       timeout: 900
-       force: no
+   - stat:
+       path: /tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz
+     register: sym
+
+    - debug:
+        msg: "islnk isn't defined (path doesn't exist)"
+      when: sym.stat.islnk is not defined
+
+    - debug:
+        msg: "islnk is defined (path must exist)"
+      when: sym.stat.islnk is defined
+
+    - debug:
+        msg: "Path exists and is a symlink"
+      when: sym.stat.islnk is defined and sym.stat.islnk
+
+    - debug:
+        msg: "Path exists and isn't a symlink"
+      when: sym.stat.islnk is defined and sym.stat.islnk == False
+
+   # - local_action: stat path="/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"
+   #   register: zeppelin_file_exists
+   #   become: no
+
+  #    get_url:
+  #      url: "{{zeppelin_download_url}}"
+  #      dest: "/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"
+  #      timeout: 900
+  #      - debug: msg="/home/user/optional/file.yml did not exist and was not included"
+  # when: optional_file.rc != 0
+  #    when: optional_file.stat.exists
+
+
+  #  - name: Extract Zeppelin
+  #    unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz dest={{zeppelin_location}} copy=no
+
+
+
+
 
 #   - name: Move zeppelin to required location
 #     command: "mv /opt/zeppelin-{{zeppelin_version}}-bin-all {{zeppelin_location}}"
-
-   - name: Extract Zeppelin
-     unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz dest={{zeppelin_location}} copy=no
 
 #   - name: Copy Zeppelin to /opt/mapr/zeppelin
 #     shell: cp -R /tmp/zeppelin.git/zeppelin-distribution/target/zeppelin-{{ zeppelin_version }}/zeppelin-{{ zeppelin_version }}/ /opt/mapr/zeppelin/

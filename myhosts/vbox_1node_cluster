@@ -10,11 +10,14 @@
 
 
 # Bootcamp specific configurations (clustername, http port, permissions)
-[bootcamp:children]
+[bootcamp-allnodes:children]
 managementnode
 controlnodes
 datanodes
 
+# Bootcamp specific configurations (build twitter sentiment analysis project)
+[bootcamp-singlenode:children]
+managementnode
 
 
 # NFS

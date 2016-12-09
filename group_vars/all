@@ -23,3 +23,9 @@ mapr_user: mapr
 twitter_sentiment_github: https://github.com/mapr-emea/twitter-sentiment-analysis
 #twitter_sentiment_github_version: 
 twitter_sentiment_location: /mapr/training.mapr.com/data/twitter-sentiment-analysis/
+
+
+# Zeppelin
+zeppelin_version: 0.6.2
+zeppelin_download_url: http://www.apache.org/dyn/closer.cgi/zeppelin/zeppelin-{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
+zeppelin_location: /opt/zeppelin

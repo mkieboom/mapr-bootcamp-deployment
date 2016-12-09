@@ -2,12 +2,17 @@
 
 # Bootcamp specifics
 - name: Set bootcamp specific details
-  hosts: bootcamp
+  hosts: bootcamp-allnodes
   roles:
 #    - bootcamp-clustername
-    - bootcamp-http-port
-    - bootcamp-permissions
-    - bootcamp-twitter-sentiment-analysis
+#    - bootcamp-http-port
+#    - bootcamp-permissions
+    - bootcamp-zeppelin
+
+- name: Set bootcamp specific details
+  hosts: bootcamp-singlenode
+  roles:
+#    - bootcamp-twitter-sentiment-analysis
 
 - name: Apply MapR pre-requisite configuration to all nodes
   hosts: all

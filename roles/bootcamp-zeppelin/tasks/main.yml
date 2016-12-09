@@ -1,10 +1,10 @@
 ---
    - stat:
-       path: /tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz
+       path: /tmp/zeppelin-{{zeppelin_version}}-bin-.tgz
      register: sym
 
    - debug:
-       msg: "/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz islnk isn't defined (path doesn't exist)"
+       msg: "/tmp/zeppelin-{{zeppelin_version}}-bin-.tgz islnk isn't defined (path doesn't exist)"
      when: sym.stat.islnk is not defined
 
    - debug:
@@ -19,14 +19,14 @@
        msg: "Path exists and isn't a symlink"
      when: sym.stat.islnk is defined and sym.stat.islnk == False
 
-   # - local_action: stat path="/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"
+   # - local_action: stat path="/tmp/zeppelin-{{zeppelin_version}}-bin-.tgz"
    #   register: zeppelin_file_exists
    #   become: no
 
   #  - name: Download and extract Zeppelin
   #    get_url:
   #      url: "{{zeppelin_download_url}}"
-  #      dest: "/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"
+  #      dest: "/tmp/zeppelin-{{zeppelin_version}}-bin-.tgz"
   #      timeout: 900
   #      - debug: msg="/home/user/optional/file.yml did not exist and was not included"
   # when: optional_file.rc != 0
@@ -34,7 +34,7 @@
 
 
   #  - name: Extract Zeppelin
-  #    unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz dest={{zeppelin_location}} copy=no
+  #    unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-.tgz dest={{zeppelin_location}} copy=no
 
 
 

@@ -4,6 +4,7 @@
        url: "{{zeppelin_download_url}}"
        dest: "/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz"
        timeout: 900
+       force: no
 
 #   - name: Move zeppelin to required location
 #     command: "mv /opt/zeppelin-{{zeppelin_version}}-bin-all {{zeppelin_location}}"

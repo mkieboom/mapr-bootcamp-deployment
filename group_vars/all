@@ -8,6 +8,7 @@ hbase_version: 1.1.1
 
 # MapR Cluster Name
 bootcamp_cluster_name: training.mapr.com
+mapr_http_port: 80
 
 # MapR Repository
 mapr_release_url:    http://package.mapr.com/releases/{{mapr_version}}

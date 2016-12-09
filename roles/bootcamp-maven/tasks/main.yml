@@ -8,3 +8,12 @@
    - name: Install Maven
      yum: name=apache-maven state=present
 
+   - name: Create Maven repo for yum
+     git:
+       repo: https://github.com/mapr-emea/twitter-sentiment-analysis
+       dest: /tmp/twitter-sentiment-analysis
+#       version: release-0.22
+
+#   - name: Compile the Twitter Sentiment Analysis jar
+#     shell: 
+# JAVA_OPTS=-Xmx2G sbt assembly

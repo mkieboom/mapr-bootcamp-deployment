@@ -1,5 +1,5 @@
 ---
-   - name: Download and extract Zeppelin
+   - name: Download Zeppelin
      get_url:
        url: "{{zeppelin_download_url}}"
        dest: "{{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz"

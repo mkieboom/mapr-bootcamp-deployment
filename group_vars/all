@@ -25,7 +25,6 @@ twitter_sentiment_github: https://github.com/mapr-emea/twitter-sentiment-analysi
 #twitter_sentiment_github_version: 
 twitter_sentiment_location: /mapr/training.mapr.com/data/twitter-sentiment-analysis/
 
-
 # Zeppelin
 zeppelin_version: 0.6.2
 zeppelin_port: 8080
@@ -33,11 +32,13 @@ zeppelin_download_location: /tmp/
 zeppelin_install_location: /opt/
 zeppelin_download_url: http://ftp.tudelft.nl/apache/zeppelin/zeppelin-{{zeppelin_version}}/zeppelin-{{zeppelin_version}}-bin-all.tgz
 
+# Zeppelin notebooks for hands-on labs
 zeppelin_notebook_1: labs_zeppelin_notebooks/Lab2-Zeppelin_ETL_and_Dataframes.json
 zeppelin_notebook_2: labs_zeppelin_notebooks/Lab6-Zeppelin_Recommendations.json
 
 # Elasticsearch
 elasticsearch_version: 5.1.1
+elasticsearch_download_location: /tmp/
 elasticsearch_download_url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{elasticsearch_version}}.rpm
 
 # Kibana

@@ -1,3 +1,9 @@
 ---
+   - name: Download Zeppelin
+     get_url:
+       url: "{{elasticsearch_download_url}}"
+       dest: "{{elasticsearch_download_location}}/elasticsearch-{{elasticsearch_version}}.rpm"
+       timeout: 900
+
    - name: Install Elasticsearch
-     yum: name={{elasticsearch_download_url}} state=present
+     yum: name={{elasticsearch_download_location}}/elasticsearch-{{elasticsearch_version}}.rpm state=present

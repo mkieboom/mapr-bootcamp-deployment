@@ -14,7 +14,7 @@
    - name: Wait for Zeppelin to come up
      wait_for:
        port: "{{zeppelin_port}}"
-       delay: 10
+       delay: 5
 
    - name: Import lab notebooks into Zeppelin
      uri:
@@ -24,6 +24,6 @@
        status_code: 201
        body_format: json
      with_items:
-     - zeppelin_notebook_1
-     - zeppelin_notebook_2
+     - {{zeppelin_notebook_1}}
+     - {{zeppelin_notebook_2}}
 

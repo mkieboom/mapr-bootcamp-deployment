@@ -1,5 +1,5 @@
 ---
-    # Change MapR Cluster Name to {{ bootcamp_cluster_name }}
+    # Change MapR Cluster Name to {{bootcamp_cluster_name}}
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
      register: clustername
 
@@ -9,6 +9,7 @@
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $3}'"
      register: clustercldbnodes
 
-   - shell: echo "{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}" > /opt/mapr/conf/mapr-clusters-test.conf
+   - file: dest=/opt/mapr/conf/mapr-clusters.conf content="{{bootcamp_cluster_name}} {{clustersecure}} {{clustercldbnodes}}"
 
-   - file: dest=/opt/mapr/conf/mapr-clusters.conf content="{{ bootcamp_cluster_name }} {{ clustersecure }} {{ clustercldbnodes }}"
+   - shell: echo "{{bootcamp_cluster_name}} {{clustersecure}} {{clustercldbnodes}}" > /opt/mapr/conf/mapr-clusters-test.conf
+

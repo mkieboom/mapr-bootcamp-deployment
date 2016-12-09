@@ -10,7 +10,7 @@ hbase_version: 1.1.1
 #hive_version: 1.2
 
 # MapR Cluster Name
-cluster_name: training.mapr.com
+bootcamp_cluster_name: training.mapr.com
 
 # MapR Filesystem disks
 disks: /dev/sdb

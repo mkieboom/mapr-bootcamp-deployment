@@ -5,7 +5,25 @@
        dest: "{{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz"
        timeout: 900
 
-   - name: Extract Zeppelin
-     unarchive: src={{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_install_location}} copy=no
+#   - name: Extract Zeppelin
+#     unarchive: src={{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_install_location}} copy=no
 
+   - name: Start Zeppelin
+     shell: "/opt/zeppelin-{{zeppelin_version}}-bin-all/bin/zeppelin-daemon.sh start"
 
+   - name: Wait for Zeppelin to come up
+     wait_for:
+       port: {{zeppelin_port}}
+       delay: 10
+
+   - name: Import lab notebooks into Zeppelin
+     uri:
+       url: http://localhost:{{zeppelin_port}}/api/notebook/import
+       method: POST
+#       user: your_username
+#       password: your_pass
+#       body: "{{ lookup('file','issue.json') }}"
+#       force_basic_auth: yes
+       body: "{{ lookup('file' , '{{zeppelin_notebook_1}}') }}"
+       status_code: 201
+       body_format: json

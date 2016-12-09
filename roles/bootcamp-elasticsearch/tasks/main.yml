@@ -1,5 +1,5 @@
 ---
-   - name: Download Zeppelin
+   - name: Download Elasticsearch
      get_url:
        url: "{{elasticsearch_download_url}}"
        dest: "{{elasticsearch_download_location}}/elasticsearch-{{elasticsearch_version}}.rpm"

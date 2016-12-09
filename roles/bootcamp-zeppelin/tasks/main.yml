@@ -1,7 +1,7 @@
 ---
    - name: Download and extract Zeppelin
      get_url:
-       src: "{{zeppelin_download_url}}"
+       url: "{{zeppelin_download_url}}"
        dest: "/tmp/"
        timeout: 300
 

@@ -8,8 +8,11 @@
    - name: Extract Zeppelin
      unarchive: src={{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_install_location}} copy=no
 
+   - name: Delete all existing Zeppelin notebooks
+     shell: "rm -rf /{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/notebook/*"
+
    - name: Start Zeppelin
-     shell: "/opt/zeppelin-{{zeppelin_version}}-bin-all/bin/zeppelin-daemon.sh restart"
+     shell: "/{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/bin/zeppelin-daemon.sh restart"
 
    - name: Wait for Zeppelin to come up
      wait_for:

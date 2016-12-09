@@ -18,10 +18,21 @@
 
    - name: Clone twitter-sentiment-analysis github project
      git:
-       repo: https://github.com/mapr-emea/twitter-sentiment-analysis
-       dest: /tmp/twitter-sentiment-analysis
-#       version: release-0.22
+       repo: {{twitter_sentiment_github}}
+       dest: {{twitter_sentiment_location}}
+       version: {{twitter_sentiment_github_version}}
+
+   - name: SBT clean compile twitter-sentiment-analysis github project
+     shell: sbt clean compile
+     args:
+       chdir: {{twitter_sentiment_location}}
+
+   - name: SBT assemply twitter-sentiment-analysis github project
+     shell: JAVA_OPTS=-Xmx2G sbt assembly
+     args:
+       chdir: {{twitter_sentiment_location}}
 
 #   - name: Compile the Twitter Sentiment Analysis jar
 #     shell: 
 # JAVA_OPTS=-Xmx2G sbt assembly
+#JAVA_OPTS=-Xmx2G sbt assembly

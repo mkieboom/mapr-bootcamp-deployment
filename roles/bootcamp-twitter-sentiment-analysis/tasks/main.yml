@@ -13,7 +13,7 @@
        url: https://bintray.com/sbt/rpm/rpm
        dest: /etc/yum.repos.d/bintray-sbt-rpm.repo
 
-   - name: Install Maven
+   - name: Install SBT
      yum: name=sbt state=present
 
    - name: Clone twitter-sentiment-analysis github project

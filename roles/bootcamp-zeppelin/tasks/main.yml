@@ -32,9 +32,8 @@
   # when: optional_file.rc != 0
   #    when: optional_file.stat.exists
 
-
-  #  - name: Extract Zeppelin
-  #    unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_location}} copy=no
+   - name: Extract Zeppelin
+     unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_location}} copy=no
 
 
 

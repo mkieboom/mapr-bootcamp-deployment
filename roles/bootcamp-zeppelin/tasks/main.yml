@@ -2,6 +2,9 @@
    - name: Download and extract Zeppelin
      unarchive:
        src: "{{zeppelin_download_url}}"
-       dest: "{{zeppelin_location}}"
+       dest: "/opt/"
        remote_src: yes
 
+   - name: Download and extract Zeppelin
+     command: "mv /opt/zeppelin* {{zeppelin_location}}"
+     

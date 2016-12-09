@@ -7,7 +7,7 @@
 #    - bootcamp-clustername
     - bootcamp-http-port
     - bootcamp-permissions
-    - bootcamp-maven
+    - bootcamp-twitter-sentiment-analysis
 
 - name: Apply MapR pre-requisite configuration to all nodes
   hosts: all

@@ -1,10 +1,15 @@
 ---
    - name: Download and extract Zeppelin
-     unarchive:
+     get_url:
        src: "{{zeppelin_download_url}}"
-       dest: "/opt/"
-       remote_src: yes
+       dest: "/tmp/"
+       timeout: 300
 
-   - name: Move zeppelin to required location
-     command: "mv /opt/zeppelin-{{zeppelin_version}}-bin-all {{zeppelin_location}}"
-     
+#   - name: Move zeppelin to required location
+#     command: "mv /opt/zeppelin-{{zeppelin_version}}-bin-all {{zeppelin_location}}"
+
+   - name: Extract Zeppelin
+     unarchive: src=/tmp/zeppelin-{{zeppelin_version}}-bin-all.tar.gz dest=/opt/mapr/zeppelin/ copy=no
+
+#   - name: Copy Zeppelin to /opt/mapr/zeppelin
+#     shell: cp -R /tmp/zeppelin.git/zeppelin-distribution/target/zeppelin-{{ zeppelin_version }}/zeppelin-{{ zeppelin_version }}/ /opt/mapr/zeppelin/

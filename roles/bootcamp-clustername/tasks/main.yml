@@ -3,5 +3,5 @@
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
      register: clustername
 
-   - lineinfile: dest=abc.conf regexp='^{{ clustername }} (.*)$' line='{{bootcamp_cluster_name }} \1' backrefs=yes
+   - lineinfile: dest=/opt/mapr/conf/mapr-clusters.conf regexp='^{{ clustername }} (.*)$' line='{{bootcamp_cluster_name }} \1' backrefs=yes
 

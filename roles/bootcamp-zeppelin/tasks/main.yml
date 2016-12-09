@@ -1,6 +1,6 @@
 ---
    - name: Download and extract Zeppelin
      unarchive:
-     src: "{{zeppelin_download_url}}"
-     dest: "{{zeppelin_location}}"
+       src: "{{zeppelin_download_url}}"
+       dest: "{{zeppelin_location}}"
 

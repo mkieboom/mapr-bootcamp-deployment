@@ -1,5 +1,15 @@
 
 
+#- name: Apply MapR pre-requisite configuration to all nodes
+#  hosts: all
+#  roles:
+
+# MapR Pre-requisites
+- name: Create MapR Repository
+  hosts: all
+  roles:
+    - configure-mapr-repository
+
 # Install MapR Eco-system components
 - name: Install Drill
   hosts: mapr-drill
@@ -52,13 +62,5 @@
     - bootcamp-kibana
 
 
-#- name: Apply MapR pre-requisite configuration to all nodes
-#  hosts: all
-#  roles:
-
-- name: Create MapR Repository
-  hosts: all
-  roles:
-    - configure-mapr-repository
 
 

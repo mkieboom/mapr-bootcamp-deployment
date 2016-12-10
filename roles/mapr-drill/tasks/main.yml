@@ -2,16 +2,16 @@
 # Install Apache Drill
 
 # Redhat / CentOS
-- name: Install mapr-drill (Redhat / CentOS)
-  yum: name=mapr-drill state=present
+- name: Install mapr-drill-{{drill_version}} (Redhat / CentOS)
+  yum: name=mapr-drill-{{drill_version}}* state=present
   when: ansible_os_family == 'RedHat'
 # Debian / Ubuntu
-- name: Install mapr-drill (Debian / Ubuntu)
-  apt: name=mapr-drill state=present allow_unauthenticated=yes
+- name: Install mapr-drill-{{drill_version}} (Debian / Ubuntu)
+  apt: name=mapr-drill-{{drill_version}}* state=present allow_unauthenticated=yes
   when: ansible_os_family == 'Debian'
 # Suse
-- name: Install mapr-drill (Suse)
-  zypper: name=mapr-drill state=present
+- name: Install mapr-drill-{{drill_version}} (Suse)
+  zypper: name=mapr-drill-{{drill_version}}* state=present
   when: ansible_os_family == 'Suse'
 
 # Other actions

@@ -1,31 +1,18 @@
 ---
-    # Change MapR Cluster Name to {{bootcamp_cluster_name}}
-   - shell: echo "demo.mapr.com secure=false MAPRN01:7222" > /opt/mapr/conf/mapr-clusters.conf
-
-   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
+   - name: Change MapR Cluster Name to {{bootcamp_cluster_name}}
+     shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
      register: clustername
-
-   - debug:
-       msg: "clustername:  {{ clustername.stdout }}"
 
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $2}'"
      register: clustersecure
-
-   - debug:
-       msg: "clustersecure:  {{ clustersecure.stdout }}"
 
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $3}'"
      register: clustercldbnodes
 
    - debug:
-       msg: "clustercldbnodes:  {{ clustercldbnodes.stdout }}"
+       msg: "Current content of mapr-clusters.conf: {{clustername.stdout}} {{clustersecure.stdout}} {{clustercldbnodes.stdout}}"
 
-#   - name: Extract organization name
-#     set_fact: cluster_conf="{{bootcamp_cluster_name}} {{clustersecure}} {{clustercldbnodes}}"
-
-#   - file: dest=/opt/mapr/conf/mapr-clusters.conf content="{{cluster_conf}}"
-
-#   - shell: echo {{cluster_conf}} > /opt/mapr/conf/mapr-clusters-test.conf
+   - debug:
+       msg: "New content of mapr-clusters.conf: {{bootcamp_cluster_name}} {{clustersecure.stdout}} {{clustercldbnodes.stdout}}"
 
    - shell: echo {{bootcamp_cluster_name}} {{clustersecure.stdout}} {{clustercldbnodes.stdout}}  > /opt/mapr/conf/mapr-clusters.conf
-#   - shell: echo {{clustercldbnodes}} > /opt/mapr/conf/mapr-clusters.conf

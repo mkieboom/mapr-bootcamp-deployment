@@ -17,4 +17,4 @@
 #   - shell: echo {{cluster_conf}} > /opt/mapr/conf/mapr-clusters-test.conf
 
 #   - shell: echo {{bootcamp_cluster_name}} {{clustersecure}} {{clustercldbnodes}}  > /opt/mapr/conf/mapr-clusters-test.conf
-   - shell: echo {{clustersecure}} > /opt/mapr/conf/mapr-clusters.conf
+   - shell: echo {{clustercldbnodes}} > /opt/mapr/conf/mapr-clusters.conf

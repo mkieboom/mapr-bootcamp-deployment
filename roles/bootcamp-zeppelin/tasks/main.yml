@@ -8,6 +8,12 @@
    - name: Extract Zeppelin
      unarchive: src={{zeppelin_download_location}}/zeppelin-{{zeppelin_version}}-bin-all.tgz dest={{zeppelin_install_location}} copy=no
 
+   - name: Copy zeppelin-site.xml.template to zeppelin-site.xml
+     shell: "cp /{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/conf/zeppelin-site.xml.template /{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/conf/zeppelin-site.xml"
+
+   - name: Set Zeppelin port number to {{zeppelin_port}} in zeppelin-site.xml
+     lineinfile: dest=/{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/conf/zeppelin-site.xml regexp="8080" line="{{zeppelin_port}}"
+
    - name: Delete all existing Zeppelin notebooks
      shell: "rm -rf /{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/notebook/*"
 

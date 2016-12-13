@@ -2,7 +2,7 @@
     # Change MapR Cluster Name to {{bootcamp_cluster_name}}
    - shell: echo "demo.mapr.com secure=false MAPRN01:7222" > /opt/mapr/conf/mapr-clusters.conf
 
-   - shell: cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'
+   - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $1}'"
      register: clustername
 
    - debug:
@@ -27,5 +27,5 @@
 
 #   - shell: echo {{cluster_conf}} > /opt/mapr/conf/mapr-clusters-test.conf
 
-#   - shell: echo {{bootcamp_cluster_name}} {{clustersecure}} {{clustercldbnodes}}  > /opt/mapr/conf/mapr-clusters-test.conf
+   - shell: echo {{bootcamp_cluster_name}} {{clustersecure}} {{clustercldbnodes}}  > /opt/mapr/conf/mapr-clusters.conf
 #   - shell: echo {{clustercldbnodes}} > /opt/mapr/conf/mapr-clusters.conf

@@ -11,55 +11,55 @@
     - configure-mapr-repository
 
 # Install MapR Eco-system components
-- name: Install Drill
-  hosts: mapr-drill
-  roles:
-    - mapr-drill
-- name: Install HBase client
-  hosts: mapr-hbase
-  roles:
-    - mapr-hbase
-- name: Install MapR NFS
-  hosts: mapr-nfs
-  roles:
-    - mapr-nfs
-- name: Install MapR MCS
-  hosts: mapr-webserver
-  roles:
-    - mapr-webserver
-- name: Install YARN Resource Manager
-  hosts: mapr-resourcemanager
-  roles:
-    - mapr-resourcemanager
-- name: Install YARN Node Manager(s)
-  hosts: mapr-nodemanager
-  roles:
-    - mapr-nodemanager
-- name: Install Spark on YARN
-  hosts: mapr-spark-yarn
-  roles:
-    - mapr-spark-yarn
-- name: Install Spark History Server
-  hosts: mapr-spark-historyserver
-  roles:
-    - mapr-spark-historyserver
+# - name: Install Drill
+#   hosts: mapr-drill
+#   roles:
+#     - mapr-drill
+# - name: Install HBase client
+#   hosts: mapr-hbase
+#   roles:
+#     - mapr-hbase
+# - name: Install MapR NFS
+#   hosts: mapr-nfs
+#   roles:
+#     - mapr-nfs
+# - name: Install MapR MCS
+#   hosts: mapr-webserver
+#   roles:
+#     - mapr-webserver
+# - name: Install YARN Resource Manager
+#   hosts: mapr-resourcemanager
+#   roles:
+#     - mapr-resourcemanager
+# - name: Install YARN Node Manager(s)
+#   hosts: mapr-nodemanager
+#   roles:
+#     - mapr-nodemanager
+# - name: Install Spark on YARN
+#   hosts: mapr-spark-yarn
+#   roles:
+#     - mapr-spark-yarn
+# - name: Install Spark History Server
+#   hosts: mapr-spark-historyserver
+#   roles:
+#     - mapr-spark-historyserver
 
 
 # Bootcamp specifics
 - name: Set bootcamp specific details
   hosts: bootcamp-allnodes
   roles:
-#    - bootcamp-clustername
-    - bootcamp-http-port
-    - bootcamp-permissions
-    - bootcamp-zeppelin
+    - bootcamp-clustername
+#     - bootcamp-http-port
+#     - bootcamp-permissions
+#     - bootcamp-zeppelin
 
-- name: Set bootcamp specific details
-  hosts: bootcamp-singlenode
-  roles:
-    - bootcamp-twitter-sentiment-analysis
-    - bootcamp-elasticsearch
-    - bootcamp-kibana
+# - name: Set bootcamp specific details
+#   hosts: bootcamp-singlenode
+#   roles:
+#     - bootcamp-twitter-sentiment-analysis
+#     - bootcamp-elasticsearch
+#     - bootcamp-kibana
 
 
 

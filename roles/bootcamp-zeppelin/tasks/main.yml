@@ -12,7 +12,7 @@
      shell: "cp /{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/conf/zeppelin-site.xml.template /{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/conf/zeppelin-site.xml"
 
    - name: Set Zeppelin port number to {{zeppelin_port}} in zeppelin-site.xml
-     lineinfile: dest=/{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/conf/zeppelin-site.xml regexp="8080" line="{{zeppelin_port}}"
+     lineinfile: dest=/{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/conf/zeppelin-site.xml regexp="^  <value>8080</value>" line="  <value>{{zeppelin_port}}</value>"
 
    - name: Delete all existing Zeppelin notebooks
      shell: "rm -rf /{{zeppelin_install_location}}/zeppelin-{{zeppelin_version}}-bin-all/notebook/*"

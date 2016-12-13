@@ -6,19 +6,19 @@
      register: clustername
 
    - debug:
-       msg: "clustername:  {{ clustername }}"
+       msg: "clustername:  {{ clustername.stdout }}"
 
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $2}'"
      register: clustersecure
 
    - debug:
-       msg: "clustersecure:  {{ clustersecure }}"
+       msg: "clustersecure:  {{ clustersecure.stdout }}"
 
    - shell: "cat /opt/mapr/conf/mapr-clusters.conf | awk '{print $3}'"
      register: clustercldbnodes
 
    - debug:
-       msg: "clustercldbnodes:  {{ clustercldbnodes }}"
+       msg: "clustercldbnodes:  {{ clustercldbnodes.stdout }}"
 
 #   - name: Extract organization name
 #     set_fact: cluster_conf="{{bootcamp_cluster_name}} {{clustersecure}} {{clustercldbnodes}}"

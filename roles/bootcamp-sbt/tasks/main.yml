@@ -1,0 +1,8 @@
+---
+   - name: Create SBT repo for yum to build and package twitter-sentiment-analysis
+     get_url:
+       url: https://bintray.com/sbt/rpm/rpm
+       dest: /etc/yum.repos.d/bintray-sbt-rpm.repo
+
+   - name: Install SBT
+     yum: name=sbt state=present

@@ -57,7 +57,9 @@
 - name: Set bootcamp specific details
   hosts: bootcamp-singlenode
   roles:
+    - bootcamp-sbt
     - bootcamp-twitter-sentiment-analysis
+    - bootcamp-spark-anchormen
     - bootcamp-elasticsearch
     - bootcamp-kibana
 

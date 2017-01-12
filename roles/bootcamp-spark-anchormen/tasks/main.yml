@@ -1,16 +1,16 @@
 ---
-   - name: Clone Anchormen/spark-bootcamp github project
+   - name: Clone Anchormen/spark_bootcamp github project
      git:
-       repo: "{{anchormen_spark-bootcamp_github}}"
-       dest: "{{anchormen_spark-bootcamp_location}}"
-#       version: "{{anchormen_spark-bootcamp_github_version}}"
+       repo: "{{anchormen_spark_bootcamp_github}}"
+       dest: "{{anchormen_spark_bootcamp_location}}"
+#       version: "{{anchormen_spark_bootcamp_github_version}}"
 
    - name: SBT clean compile twitter-sentiment-analysis github project
      shell: sbt clean compile
      args:
-       chdir: "{{anchormen_spark-bootcamp_location}}"
+       chdir: "{{anchormen_spark_bootcamp_location}}"
 
    - name: SBT assemply twitter-sentiment-analysis github project
      shell: JAVA_OPTS=-Xmx2G sbt assembly
      args:
-       chdir: "{{anchormen_spark-bootcamp_location}}"
+       chdir: "{{anchormen_spark_bootcamp_location}}"

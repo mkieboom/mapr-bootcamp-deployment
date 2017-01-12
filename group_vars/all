@@ -27,9 +27,9 @@ twitter_sentiment_github: https://github.com/mapr-emea/twitter-sentiment-analysi
 twitter_sentiment_location: /mapr/training.mapr.com/data/twitter-sentiment-analysis/
 
 # Anchormen/spark_bootcamp details
-anchormen_spark_bootcamp_github: https://github.com/Anchormen/spark_bootcamp
+anchormen_spark_bootcamp_github: https://github.com/Anchormen/spark-bootcamp
 #anchormen_spark_bootcamp_github_version: 
-anchormen_spark_bootcamp_location: /mapr/training.mapr.com/data/spark_bootcamp/
+anchormen_spark_bootcamp_location: /mapr/training.mapr.com/data/spark-bootcamp/
 
 # Zeppelin
 zeppelin_version: 0.6.2

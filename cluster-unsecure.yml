@@ -52,6 +52,7 @@
     - bootcamp-clustername
     - bootcamp-http-port
     - bootcamp-permissions
+    - mapr-configure-warden-restart
     - bootcamp-zeppelin
 
 - name: Set bootcamp specific details

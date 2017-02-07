@@ -60,7 +60,7 @@
   roles:
     - bootcamp-sbt
     - bootcamp-twitter-sentiment-analysis
-    - bootcamp-spark-anchormen
+#    - bootcamp-spark-anchormen ## Now part of zeppelin notebooks (lab 6)
     - bootcamp-elasticsearch
     - bootcamp-kibana
 

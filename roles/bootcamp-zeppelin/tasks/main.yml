@@ -36,6 +36,9 @@
      - "{{zeppelin_notebook_1}}"
      - "{{zeppelin_notebook_2}}"
      
+   - name: Creates Data directory
+     file: path={{lab_dataset_install_location}} state=directory
+
    - name: Extract Lab2 Dataset
      unarchive:
        src={{lab_dataset_download_location}}/{{item}}

@@ -35,4 +35,12 @@
      with_items:
      - "{{zeppelin_notebook_1}}"
      - "{{zeppelin_notebook_2}}"
-
+     
+   - name: Extract Lab2 Dataset
+     unarchive:
+       src={{lab_dataset_download_location}}/{{item}}
+       dest={{lab_dataset_install_location}}
+       copy=no
+     with_items:
+     - "{{lab_dataset_filename_lab2}}"
+     - "{{lab_dataset_filename_lab6}}"

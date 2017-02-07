@@ -42,6 +42,12 @@ zeppelin_download_url: http://ftp.tudelft.nl/apache/zeppelin/zeppelin-{{zeppelin
 zeppelin_notebook_1: labs_zeppelin_notebooks/Lab2-Zeppelin_ETL_and_Dataframes.json
 zeppelin_notebook_2: labs_zeppelin_notebooks/Lab6-Zeppelin_Recommendations.json
 
+# Datasets for Zeppelin labs
+lab_dataset_download_location: "{{playbook_dir}}/labs_zeppelin_notebooks"
+lab_dataset_install_location: /mapr/{{bootcamp_cluster_name}}/data/
+lab_dataset_filename_lab2: lab2_dataset.tar.gz
+lab_dataset_filename_lab6: lab6_dataset.tar.gz
+
 # Zeppelin datasets for hands-on labs
 zeppelin_dataset_1a_source: labs_zeppelin_notebooks/Lab2-DatasetA_airports.csv
 zeppelin_dataset_1a_dest: /mapr/training.mapr.com/data/flight_subset/airports.csv

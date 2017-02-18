@@ -1,3 +1,3 @@
 ---
    - name: Install Elasticdump
-     npm: name: elasticdump global: yes
+     npm: name=elasticdump global=yes

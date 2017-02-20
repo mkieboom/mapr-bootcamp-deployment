@@ -1,0 +1,16 @@
+{
+  "_index": "twitter",
+  "_type": "tweet",
+  "_id": "AVmnnhW5SE627Dg5qNqj",
+  "_score": 1,
+  "_source": {
+    "retweet": 1,
+    "location": null,
+    "sentiment": "POSITIVE",
+    "text": "twitter text message",
+    "language": "en",
+    "created_at": "2014-01-01T08:00-0500",
+    "user": "twitteruser",
+    "hashtags": ["hashtags1","hashtags2"]
+  }
+}

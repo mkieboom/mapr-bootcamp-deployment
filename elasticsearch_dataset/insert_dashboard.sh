@@ -56,11 +56,34 @@ curl -XPUT 'localhost:9200/twitter/_mapping/tweet?pretty' -H 'Content-Type: appl
 '
 
 
+## Get Search
+#curl -XGET "http://localhost:9200/.kibana/search/All-tweets?pretty=1"
 
 ## Get dashboard
 #curl -XGET "http://localhost:9200/.kibana/dashboard/dashboard_name?pretty=1"
+
 ## Get visualization
 #curl -XGET "http://localhost:9200/.kibana/visualization/visualization-name?pretty=1"
+
+## Import Search: All-Tweets
+curl -XPUT 'localhost:9200/.kibana/search/All-tweets?pretty' -H 'Content-Type: application/json' -d'
+{
+    "title" : "All tweets",
+    "description" : "",
+    "hits" : 0,
+    "columns" : [
+      "_source"
+    ],
+    "sort" : [
+      "_score",
+      "desc"
+    ],
+    "version" : 1,
+    "kibanaSavedObjectMeta" : {
+      "searchSourceJSON" : "{\"index\":\"twitter\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[],\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}"
+    }
+}
+'
 
 ## Import Visualization 1: QuarterHourly-Analysis
 curl -XPUT 'localhost:9200/.kibana/visualization/QuarterHourly-Analysis?pretty' -H 'Content-Type: application/json' -d'

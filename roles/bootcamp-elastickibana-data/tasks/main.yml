@@ -1,3 +1,13 @@
 ---
+   - name: Install npm
+     yum: name=npm state=present
+
    - name: Install Elasticdump
      npm: name=elasticdump global=yes
+
+   - name: Load a single twitter message into the Twitter Index
+     shell: elasticdump --input={{playbook_dir}}/elasticsearch_dataset/tweet.json --output=http://localhost:9200/twitter --type=data
+
+   - name: Insert the dashboard
+     script: "{{playbook_dir}}/elasticsearch_dataset/insert_dashboard.sh {{kibana_version}} {{kibana_build}}"
+

@@ -2,6 +2,12 @@
    - name: Install npm
      yum: name=npm state=present
 
+   - name: Upgrade npm to latest version
+     npm: name=n global=yes
+
+   - name: Upgrade npm to latest version
+     shell: n stable
+
    - name: Install Elasticdump
      npm: name=elasticdump global=yes
 

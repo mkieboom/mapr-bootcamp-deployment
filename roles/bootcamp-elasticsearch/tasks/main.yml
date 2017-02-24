@@ -12,7 +12,12 @@
      vars:
        networkbindhost: 'network.bind_host: 0.0.0.0'
      lineinfile: dest=/etc/elasticsearch/elasticsearch.yml line='{{ networkbindhost }}' state=present
-     
+
+   - name: Set ulimit nproc to 2048 for user elasticsearch
+     vars:
+       nproc: 'elasticsearch - nproc 2048'
+     lineinfile: dest=/etc/security/limits.conf line='{{ nproc }}' state=present
+
    - name: Start the Elasticsearch service
      service:
        name: elasticsearch

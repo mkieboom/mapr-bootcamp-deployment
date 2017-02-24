@@ -18,6 +18,8 @@
   shell: hadoop fs -mkdir -p /apps/spark
 - name: Owner maprfs:///apps/spark
   shell: hadoop fs -chown mapr:mapr /apps/spark
+- name: Open permission on maprfs:///apps/spark
+  shell: hadoop fs -chmod 777 /apps/spark
 - name: Configure.sh -R
   shell: /opt/mapr/server/configure.sh -R
 - name: Set owner mapr-system user

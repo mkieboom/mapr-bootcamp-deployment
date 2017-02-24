@@ -58,6 +58,7 @@
 - name: Set bootcamp specific details
   hosts: bootcamp-singlenode
   roles:
+    - bootcamp-dataset
     - bootcamp-sbt
     - bootcamp-twitter-sentiment-analysis
 #    - bootcamp-spark-anchormen ## Now part of zeppelin notebooks (lab 6)

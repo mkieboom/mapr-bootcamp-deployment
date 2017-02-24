@@ -1,0 +1,19 @@
+---
+   - name: Creates Data directory
+     file: path={{lab_dataset_install_location}} state=directory
+
+   - name: Extract Zeppelin Lab Datasets
+     unarchive:
+       src={{lab_dataset_download_location}}/{{item}}
+       dest={{lab_dataset_install_location}}
+       copy=no
+     with_items:
+     - "{{lab_dataset_filename_lab2}}"
+     - "{{lab_dataset_filename_lab6}}"
+
+   - name: Copy Drill dataset
+     copy:
+       src={{drill_lab_dataset_download_location}}/{{item}}
+       dest={{lab_dataset_install_location}}
+     with_items:
+     - "{{drill_lab_dataset_filename_lab4}}"

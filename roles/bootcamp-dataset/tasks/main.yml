@@ -28,5 +28,11 @@
        url: "http://localhost:8047/storage/dfs.json"
        method: POST
        body: "{{ lookup('file' , '{{drill_storage_plugin_dfs}}') }}"
-       status_code: 201
        body_format: json
+       return_content: yes
+     register: drill_storage_plugin_result
+
+   - name: Check if the DFS storage plugin got created successfully in Drill
+     fail:
+     when: "'success' not in drill_storage_plugin_result.content"
+

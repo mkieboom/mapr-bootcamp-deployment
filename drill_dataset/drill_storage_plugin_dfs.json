@@ -1,0 +1,64 @@
+{
+  "name" : "dfs",
+  "config" : {
+    "type" : "file",
+    "enabled" : true,
+    "connection" : "maprfs:///",
+    "config" : null,
+    "workspaces" : {
+      "root" : {
+        "location" : "/",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "flights" : {
+        "location" : "/data/flight_dataset/",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "flight_views" : {
+        "location" : "/data/flight_views/",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "mapr" : {
+        "location" : "/user/mapr/",
+        "writable" : true,
+        "defaultInputFormat" : null
+      },
+      "tmp" : {
+        "location" : "/tmp",
+        "writable" : true,
+        "defaultInputFormat" : null
+      }
+    },
+    "formats" : {
+      "psv" : {
+        "type" : "text",
+        "extensions" : [ "tbl" ],
+        "delimiter" : "|"
+      },
+      "csv" : {
+        "type" : "text",
+        "extensions" : [ "csv" ],
+        "skipFirstLine" : true,
+        "delimiter" : ","
+      },
+      "tsv" : {
+        "type" : "text",
+        "extensions" : [ "tsv" ],
+        "delimiter" : "\t"
+      },
+      "parquet" : {
+        "type" : "parquet"
+      },
+      "json" : {
+        "type" : "json",
+        "extensions" : [ "json" ]
+      },
+      "maprdb" : {
+        "type" : "maprdb"
+      }
+    }
+  }
+}

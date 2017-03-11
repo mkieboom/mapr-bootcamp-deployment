@@ -17,3 +17,16 @@
        dest={{lab_dataset_install_location}}
      with_items:
      - "{{drill_lab_dataset_filename_lab4}}"
+
+   - name: Wait for Drill to come up
+     wait_for:
+       port: "{{drill_port}}"
+       delay: 5
+
+   - name: Update Apache Drill DFS storage plugin
+     uri:
+       url: "http://localhost:8047/storage/dfs.json"
+       method: POST
+       body: "{{ lookup('file' , '{{drill_storage_plugin_dfs}}') }}"
+       status_code: 201
+       body_format: json

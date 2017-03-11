@@ -51,6 +51,8 @@ lab_dataset_filename_lab2: lab2_dataset.tar.gz
 lab_dataset_filename_lab6: lab6_dataset.tar.gz
 
 # Datasets for Drill labs
+drill_port: 8047
+drill_storage_plugin_dfs: drill_dataset/drill_storage_plugin_dfs.json
 drill_lab_dataset_download_location: "{{playbook_dir}}/drill_dataset"
 drill_lab_dataset_filename_lab4: citizens_per_country.csv
 

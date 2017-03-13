@@ -1,0 +1,72 @@
+# Cluster Node definition
+[managementnode]
+10-10-10.181 ansible_user=root ansible_become=yes ansible_become_method=sudo
+
+[datanodes]
+10-10-10.181 ansible_user=root ansible_become=yes ansible_become_method=sudo
+10-10-10.182 ansible_user=root ansible_become=yes ansible_become_method=sudo
+10-10-10.183 ansible_user=root ansible_become=yes ansible_become_method=sudo
+10-10-10.184 ansible_user=root ansible_become=yes ansible_become_method=sudo
+10-10-10.185 ansible_user=root ansible_become=yes ansible_become_method=sudo
+
+
+# Bootcamp specific configurations (clustername, http port, permissions)
+[bootcamp-allnodes:children]
+managementnode
+datanodes
+
+# Bootcamp specific configurations (build twitter sentiment analysis project)
+[bootcamp-singlenode:children]
+managementnode
+
+
+# NFS
+[mapr-nfs:children]
+managementnode
+datanodes
+
+# Apache Drill
+[mapr-drill:children]
+managementnode
+datanodes
+
+# MapR MCS
+[mapr-webserver:children]
+managementnode
+datanodes
+
+# HBase client
+[mapr-hbase:children]
+managementnode
+datanodes
+
+
+###############################################################
+
+
+# Gateway for Streams and MapR-DB
+[mapr-gateway:children]
+managementnode
+
+# YARN resource manager
+[mapr-resourcemanager:children]
+managementnode
+
+# YARN Node Manager
+[mapr-nodemanager:children]
+datanodes
+
+# Job History Server, IMPORTANT: only one
+[mapr-historyserver:children]
+
+# MySQL, required for Hive MetaStore and Oozie, IMPORTANT: only one
+[ext-mysql:children]
+
+# Spark on YARN
+[mapr-spark-yarn:children]
+managementnode
+datanodes
+
+# Spark HistoryServer
+[mapr-spark-historyserver:children]
+managementnode

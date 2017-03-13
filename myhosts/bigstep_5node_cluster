@@ -2,9 +2,6 @@
 [managementnode]
 instance-12345 ansible_user=root ansible_become=yes ansible_become_method=sudo
 
-[controlnodes]
-instance-12345 ansible_user=root ansible_become=yes ansible_become_method=sudo
-
 [datanodes]
 instance-12345 ansible_user=root ansible_become=yes ansible_become_method=sudo
 instance-12346 ansible_user=root ansible_become=yes ansible_become_method=sudo
@@ -16,7 +13,6 @@ instance-12349 ansible_user=root ansible_become=yes ansible_become_method=sudo
 # Bootcamp specific configurations (clustername, http port, permissions)
 [bootcamp-allnodes:children]
 managementnode
-controlnodes
 datanodes
 
 # Bootcamp specific configurations (build twitter sentiment analysis project)
@@ -27,25 +23,21 @@ managementnode
 # NFS
 [mapr-nfs:children]
 managementnode
-controlnodes
 datanodes
 
 # Apache Drill
 [mapr-drill:children]
 managementnode
-controlnodes
 datanodes
 
 # MapR MCS
 [mapr-webserver:children]
 managementnode
-controlnodes
 datanodes
 
 # HBase client
 [mapr-hbase:children]
 managementnode
-controlnodes
 datanodes
 
 
@@ -62,7 +54,6 @@ managementnode
 
 # YARN Node Manager
 [mapr-nodemanager:children]
-controlnodes
 datanodes
 
 # Job History Server, IMPORTANT: only one
@@ -74,17 +65,8 @@ datanodes
 # Spark on YARN
 [mapr-spark-yarn:children]
 managementnode
-controlnodes
 datanodes
 
 # Spark HistoryServer
 [mapr-spark-historyserver:children]
 managementnode
-
-
-
-
-
-
-
-

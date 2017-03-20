@@ -17,6 +17,10 @@ mapr_mep_url:        http://package.mapr.com/releases/MEP/MEP-{{mapr_mep_version
 mapr_ecosystem_url:  http://package.mapr.com/releases/ecosystem-5.x
 mapr_gpg_url:        http://package.mapr.com/releases/pub/maprgpg.key
 
+# Bootcamp user accounts
+user_count: 40
+user_password: m@prr0cks!
+
 # MapR User & Group details
 mapr_group: mapr
 mapr_user: mapr

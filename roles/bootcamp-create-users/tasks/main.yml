@@ -1,0 +1,3 @@
+---
+   - name: Create the user accounts
+     script: "{{playbook_dir}}/create_user_accounts/users.sh create {{user_count}} {{user_password}}"

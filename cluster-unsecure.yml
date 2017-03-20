@@ -54,6 +54,7 @@
     - bootcamp-permissions
     - mapr-configure-warden-restart
     - bootcamp-zeppelin
+    - bootcamp-create-users
 
 - name: Set bootcamp specific details
   hosts: bootcamp-singlenode

@@ -22,6 +22,7 @@
      service:
        name: elasticsearch
        state: restarted
+       enabled: yes
 
 #   - name: Wait for Elasticsearch to come up
 #     wait_for:

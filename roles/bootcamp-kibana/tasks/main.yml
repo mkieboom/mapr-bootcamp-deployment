@@ -15,6 +15,7 @@
      service:
        name: kibana
        state: restarted
+       enabled: yes
 
    - name: Wait for Kibana to come up
      wait_for:

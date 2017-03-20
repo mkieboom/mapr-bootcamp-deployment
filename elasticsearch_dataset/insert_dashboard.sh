@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Create the twitter index pattern
 curl -XPOST 'localhost:9200/_bulk?pretty' -H 'Content-Type: application/json' -d '
 { "index" : { "_index" : ".kibana", "_type" : "config", "_id" : "'$1'" } }

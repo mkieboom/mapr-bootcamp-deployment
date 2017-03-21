@@ -72,17 +72,17 @@ zeppelin_dataset_2b_source: labs_zeppelin_notebooks/Lab6-DatasetB_jokes.tar.gz
 zeppelin_dataset_2b_dest: /mapr/training.mapr.com/data/joke_recommendations/jester/jokes/
 
 # Elasticsearch
-elasticsearch_version: 5.0.2
-#elasticsearch_version: 5.2.1
+#elasticsearch_version: 5.0.2
+elasticsearch_version: 5.2.2
 elasticsearch_port: 9200
 elasticsearch_download_location: /tmp/
 elasticsearch_download_url: https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-{{elasticsearch_version}}.rpm
 
 # Kibana
-kibana_version: 5.0.2
-kibana_build: 14476
-#kibana_version: 5.2.1
-#kibana_build: 14707
+#kibana_version: 5.0.2
+#kibana_build: 14476
+kibana_version: 5.2.2
+kibana_build: 14723
 kibana_port: 5601
 kibana_download_location: /tmp/
 kibana_download_url: https://artifacts.elastic.co/downloads/kibana/kibana-{{kibana_version}}-x86_64.rpm

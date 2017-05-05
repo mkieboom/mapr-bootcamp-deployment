@@ -1,11 +1,11 @@
 # Version information
-mapr_version: v5.2.0
-mapr_mep_version: 2.0.0
+mapr_version: v5.2.1
+mapr_mep_version: 3.0.0
 
 # Eco-sysem version information
-spark_version: 2.0.1
-hbase_version: 1.1.1
-drill_version: 1.9.0
+spark_version: 2.1.0
+hbase_version: 1.1.8
+drill_version: 1.10.0
 
 # MapR Cluster Name
 bootcamp_cluster_name: training.mapr.com

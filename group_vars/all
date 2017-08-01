@@ -36,7 +36,7 @@ anchormen_spark_bootcamp_github: https://github.com/Anchormen/spark-bootcamp
 anchormen_spark_bootcamp_location: /mapr/training.mapr.com/data/spark-bootcamp/
 
 # Zeppelin
-zeppelin_version: 0.7.1
+zeppelin_version: 0.7.2
 zeppelin_port: 8181
 zeppelin_download_location: /tmp/
 zeppelin_install_location: /opt/

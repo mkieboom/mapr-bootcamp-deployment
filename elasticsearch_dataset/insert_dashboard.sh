@@ -161,8 +161,7 @@ curl -XPUT 'localhost:9200/.kibana/visualization/Trending-HashTags?pretty' -H 'C
 curl -XPUT 'localhost:9200/.kibana/visualization/realDonaldTrump-JebBush-HillaryClinton?pretty' -H 'Content-Type: application/json' -d'
 {
     "title" : "realDonaldTrump JebBush HillaryClinton",
-    "visState" : "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"grouped\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"sentiment\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"text\",\"include\":{\"flags\":[\"CASE_INSENSITIVE\"],\"pattern\":\"realDonaldTrump||JebBush||HillaryClinton\"},\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"realDonaldTrump JebBush HillaryClinton\"}",
-    "uiStateJSON" : "{}",
+    "visState" : "{\"title\":\"realDonaldTrump JebBush HillaryClinton\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"grouped\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"sentiment\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",    "uiStateJSON" : "{}",
     "description" : "",
     "version" : 1,
     "kibanaSavedObjectMeta" : {

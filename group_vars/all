@@ -1,6 +1,6 @@
 # Version information
-mapr_version: v5.2.1
-mapr_mep_version: 3.0.0
+mapr_version: v5.2.2
+mapr_mep_version: 3.0.1
 
 # Eco-sysem version information
 spark_version: 2.1.0

@@ -13,6 +13,12 @@
        networkbindhost: 'network.bind_host: 0.0.0.0'
      lineinfile: dest=/etc/elasticsearch/elasticsearch.yml line='{{ networkbindhost }}' state=present
 
+   - name: CentOS6 Disable system_call_filter
+     vars:
+       systemcallfilter: 'bootstrap.system_call_filter: false'
+     lineinfile: dest=/etc/elasticsearch/elasticsearch.yml line='{{ systemcallfilter }}' state=present
+     when: ansible_os_family == 'RedHat' and ansible_distribution_major_version == "6" 
+
    - name: Set ulimit nproc to 2048 for user elasticsearch
      vars:
        nproc: 'elasticsearch - nproc 2048'

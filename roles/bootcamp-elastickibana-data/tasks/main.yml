@@ -1,4 +1,10 @@
 ---
+   # Workaround for epel bug on CentOS 7.3 - https://bugs.centos.org/view.php?id=13669&nbn=1
+   - name: Install http parser
+     yum:
+       name: "https://kojipkgs.fedoraproject.org//packages/http-parser/2.7.1/3.el7/x86_64/http-parser-2.7.1-3.el7.x86_64.rpm"
+       state: present
+
    - name: Install npm
      yum: name=npm state=present
 

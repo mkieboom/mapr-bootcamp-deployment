@@ -1,8 +1,8 @@
 # Version information
 ## IMPORTANT: When updating the mapr_version, also update 'maprVersion' in:
 ## https://github.com/mapr-emea/twitter-sentiment-analysis/edit/master/build.sbt
-mapr_version: v5.2.2
-mapr_mep_version: 3.0.1
+mapr_version: v5.2.1
+mapr_mep_version: 3.0.0
 
 
 # Eco-sysem version information
